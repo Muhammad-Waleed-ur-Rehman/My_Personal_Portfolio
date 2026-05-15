@@ -1,0 +1,38 @@
+node_modules/
+dist/
+
+# Environment variables - Keep secrets safe!
+.env
+.env.local
+.env.*.local
+
+# OS & Editor files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build & Cache
+.vite/
+dist/
+.cache/
+build/
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/*
+
+# Misc
+.env.prod
+.env.staging
