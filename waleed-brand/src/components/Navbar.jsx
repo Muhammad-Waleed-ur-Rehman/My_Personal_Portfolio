@@ -70,6 +70,12 @@ export default function Navbar() {
           >
             Contact
           </button>
+          <Link
+            to="/advanced"
+            className="text-sm text-dark-text-secondary hover:text-dark-accent transition-colors duration-200"
+          >
+            Advanced
+          </Link>
         </div>
 
         {/* CTA Button */}
@@ -135,6 +141,12 @@ export default function Navbar() {
             >
               Contact
             </button>
+            <Link
+              to="/advanced"
+              className="text-sm text-dark-text-secondary hover:text-dark-accent"
+            >
+              Advanced
+            </Link>
             <a href="#" className="btn-primary text-xs w-full text-center">
               Download CV
             </a>

@@ -7,6 +7,8 @@ import Experience from "./sections/Experience";
 import Projects from "./sections/Projects";
 import Skills from "./sections/Skills";
 import Contact from "./sections/Contact";
+import AdvancedFeatures from "./components/AdvancedFeatures";
+import AdvancedDashboard from "./sections/AdvancedDashboard";
 
 export default function App() {
   return (
@@ -27,6 +29,8 @@ export default function App() {
               </>
             }
           />
+          <Route path="/advanced" element={<AdvancedFeatures />} />
+          <Route path="/dashboard" element={<AdvancedDashboard />} />
         </Routes>
       </main>
       <Footer />
