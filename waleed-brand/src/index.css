@@ -3,17 +3,75 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-white text-gray-900 antialiased;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    @apply bg-dark-bg text-dark-text antialiased;
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', sans-serif;
+    @apply text-dark-text;
+  }
+
+  a {
+    @apply text-dark-accent transition-colors duration-200;
+
+    &:hover {
+      @apply text-white;
+    }
+  }
+
+  button {
+    @apply transition-all duration-200;
   }
 }
 
 @layer components {
-  .glass {
-    @apply bg-white/80 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-md;
+  .container-wide {
+    @apply w-full max-w-7xl mx-auto px-4 md:px-8;
   }
-  .gradient-text {
-    @apply bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent;
+
+  .section-divider {
+    @apply h-px w-full;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.06), transparent);
+  }
+
+  .surface-card {
+    @apply bg-dark-surface rounded-xl;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .eyebrow {
+    @apply text-eyebrow uppercase tracking-widest font-semibold;
+    color: rgba(193, 255, 20, 0.7);
+  }
+
+  .btn-primary {
+    @apply bg-dark-accent text-black px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-glow;
+  }
+
+  .btn-ghost {
+    @apply border border-white/20 text-dark-text px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:border-dark-accent hover:text-dark-accent;
+  }
+
+  .stat-number {
+    @apply text-stat font-bold text-dark-text;
+  }
+
+  .stat-label {
+    @apply text-sm text-dark-text-secondary uppercase tracking-wider font-medium mt-2;
+  }
+
+  .fade-up {
+    @apply animate-fade-up;
   }
 }

@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { FiCopy, FiCheck } from "react-icons/fi";
-import { FaLinkedin, FaGithub, FaTelegram, FaXTwitter, FaInstagram, FaDiscord } from "react-icons/fa6";
+import { FaLinkedin, FaGithub, FaTelegram, FaXTwitter } from "react-icons/fa6";
 import config from "../config";
 
 export default function Contact() {
@@ -15,77 +14,96 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 bg-gray-50">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
-        >
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">Get in Touch</h2>
-          <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-            Ready to explore AI-driven solutions or blockchain innovations? Let's connect.
+    <section id="contact" className="py-24 md:py-32 px-4">
+      <div className="section-divider mb-16" />
+      <div className="container-wide">
+        {/* Section Header */}
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <div className="eyebrow mb-4 justify-center inline-block w-full">
+            Get in touch
+          </div>
+          <h2 className="text-4xl md:text-5xl font-syne font-bold mb-6">
+            Let's Build Together
+          </h2>
+          <p className="text-lg text-dark-text-secondary mb-12 max-w-2xl mx-auto">
+            Ready to explore AI-driven solutions or blockchain innovations? I'd love to connect.
           </p>
+        </div>
 
+        {/* Content Grid */}
+        <div className="max-w-3xl mx-auto">
           {/* Email */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.1 }}
-            className="inline-block mb-12"
-          >
-            <button
-              onClick={copyEmail}
-              className="flex items-center gap-3 px-8 py-4 bg-white border-2 border-gray-900 rounded-lg font-semibold text-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300"
-            >
-              <span>{email}</span>
-              {copied ? <FiCheck className="w-5 h-5" /> : <FiCopy className="w-5 h-5" />}
-            </button>
-          </motion.div>
+          <div className="surface-card p-8 rounded-xl mb-12">
+            <p className="text-dark-text-secondary text-sm uppercase tracking-wider mb-4">
+              Email
+            </p>
+            <div className="flex items-center justify-between">
+              <a
+                href={`mailto:${email}`}
+                className="text-2xl md:text-3xl font-bold text-dark-accent hover:text-white transition-colors"
+              >
+                {email}
+              </a>
+              <button
+                onClick={copyEmail}
+                className="flex items-center gap-2 px-4 py-2 bg-dark-accent/10 hover:bg-dark-accent/20 border border-dark-accent/30 rounded-lg transition-all duration-200 text-dark-accent"
+              >
+                {copied ? (
+                  <>
+                    <FiCheck className="w-4 h-4" />
+                    <span className="text-xs">Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <FiCopy className="w-4 h-4" />
+                    <span className="text-xs">Copy</span>
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
 
           {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="flex justify-center gap-8 mb-12 text-3xl"
-          >
-            {[
-              { icon: <FaLinkedin />, url: config.social.linkedin },
-              { icon: <FaGithub />, url: config.social.github },
-              { icon: <FaTelegram />, url: config.social.telegram },
-              { icon: <FaXTwitter />, url: config.social.twitter },
-              { icon: <FaInstagram />, url: config.social.instagram },
-              { icon: <FaDiscord />, url: config.social.discord }
-            ].map((link, i) => (
-              <motion.a
-                key={i}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.2, color: "#000" }}
-                className="text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                {link.icon}
-              </motion.a>
-            ))}
-          </motion.div>
+          <div className="surface-card p-8 rounded-xl mb-12">
+            <p className="text-dark-text-secondary text-sm uppercase tracking-wider mb-6">
+              Follow & Connect
+            </p>
+            <div className="flex gap-6">
+              {[
+                { icon: <FaLinkedin className="w-6 h-6" />, url: config.social.linkedin, label: "LinkedIn" },
+                { icon: <FaGithub className="w-6 h-6" />, url: config.social.github, label: "GitHub" },
+                { icon: <FaTelegram className="w-6 h-6" />, url: config.social.telegram, label: "Telegram" },
+                { icon: <FaXTwitter className="w-6 h-6" />, url: config.social.twitter, label: "Twitter" },
+              ].map((link, i) => (
+                <a
+                  key={i}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-dark-accent hover:text-white transition-colors p-3 rounded-lg hover:bg-dark-accent/10"
+                  title={link.label}
+                >
+                  {link.icon}
+                </a>
+              ))}
+            </div>
+          </div>
 
           {/* CTA */}
-          <motion.a
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            href={config.social.calendly}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-10 py-4 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors text-lg"
-          >
-            Schedule a Call
-          </motion.a>
-          <p className="text-gray-600 mt-6 text-sm">Book a 30-min consultation to discuss your project</p>
-        </motion.div>
+          <div className="text-center">
+            <a
+              href={config.social.calendly}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-block mb-4"
+            >
+              Schedule a 30-Min Call
+            </a>
+            <p className="text-dark-text-secondary text-sm">
+              Let's discuss your next project or opportunity
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
