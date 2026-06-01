@@ -346,6 +346,51 @@ Next: Run `npm install` → `npm run dev` → Test locally → Deploy!
 
 ---
 
+## 📁 Complete `src/` File & Folder Listing
+
+Below is the full, current contents of the `src/` folder (files and subfolders) included in this build and documentation:
+
+```
+src/
+├── App.jsx
+├── index.css
+├── main.jsx
+├── config.js
+├── data/
+│   ├── blogPosts.js
+│   └── dashboardData.js
+├── pages/
+│   ├── Home.jsx
+│   ├── BlogList.jsx
+│   └── BlogDetail.jsx
+├── components/
+│   ├── AdvancedFeatures.jsx
+│   ├── Banner.jsx
+│   ├── Footer.jsx
+│   ├── GiscusComments.jsx
+│   ├── Navbar.jsx
+│   ├── StickyChatButton.jsx
+│   └── ui/
+│       ├── Button.jsx
+│       ├── GlassCard.jsx
+│       └── SectionTitle.jsx
+├── sections/
+│   ├── Hero.jsx
+│   ├── HeroSpade.jsx
+│   ├── About.jsx
+│   ├── Skills.jsx
+│   ├── Experience.jsx
+│   ├── Projects.jsx
+│   ├── Blog.jsx
+│   ├── Chatbot.jsx
+│   ├── Contact.jsx
+│   ├── Dashboard.jsx
+│   ├── AdvancedDashboard.jsx
+│   └── ServicesSpade.jsx
+```
+
+All of these files are present in the repository and have been reviewed for environment-variable usage and integration. The advanced modules (`AdvancedFeatures.jsx`, `AdvancedDashboard.jsx`) are integrated as routes (`/advanced`, `/dashboard`) and accessible from the navbar.
+
 **Completed By**: AI Assistant
 **Completion Date**: 2025
 **Status**: ✅ Production Ready

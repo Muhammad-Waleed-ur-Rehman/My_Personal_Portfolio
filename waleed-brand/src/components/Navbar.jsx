@@ -147,6 +147,12 @@ export default function Navbar() {
             >
               Advanced
             </Link>
+            <Link
+              to="/showcase"
+              className="text-sm text-dark-text-secondary hover:text-dark-accent"
+            >
+              Showcase
+            </Link>
             <a href="#" className="btn-primary text-xs w-full text-center">
               Download CV
             </a>
